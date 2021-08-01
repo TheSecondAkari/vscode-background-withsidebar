@@ -1,15 +1,24 @@
 # vscode-background
 
-[![Version](https://vsmarketplacebadge.apphb.com/version/shalldie.background.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=shalldie.background)
-[![Installs](https://vsmarketplacebadge.apphb.com/installs/shalldie.background.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=shalldie.background)
-[![Ratings](https://vsmarketplacebadge.apphb.com/rating/shalldie.background.svg?style=flat-square)](https://vsmarketplacebadge.apphb.com/rating/shalldie.background.svg)
-[![Build Status](https://img.shields.io/github/workflow/status/shalldie/vscode-background/ci?label=build&logo=github&style=flat-square)](https://github.com/shalldie/vscode-background/actions)
+# Warns 警告：
+    该插件是在插件background的基础上增加少量代码完成，仅用作学习
+    在不影响原功能的情况下，增加了侧边栏内容的背景图设置
+    该插件是复用了 background 的所有代码，所以如果同时安装 本插件和background 会造成冲突，请留意！
 
-## Add a lovely background-image to your vscode.
+## Config 配置项（新增）
 
-GitHub: [https://github.com/shalldie/vscode-background](https://github.com/shalldie/vscode-background)
+| Name                      |      Type       | Description                                                                         |
+| :------------------------ | :-------------: | :---------------------------------------------------------------------------------- |
+| `background.sidebarImages` | `Array<String>` | 侧边栏定制背景图，不为空才会生效     |
+| `background.sidebarItems`  | `Array<String>` | 侧边栏启用定制背景图的tags，为空则只对 explorer生效，则侧边栏第一项生效,可选值[ workbench.view.(explorer, search, scm, debug, extensions) ] |
+| `background.siderbarStyles`| `Array<Object>` | 每个侧边栏图片的独立样式
 
-Vscode Market: [https://marketplace.visualstudio.com/items?itemName=shalldie.background](https://marketplace.visualstudio.com/items?itemName=shalldie.background)
+## 依赖参考项目 background 
+    author: shalldie
+    GitHub: https://github.com/shalldie/vscode-background
+
+#
+# 以下为 background 插件的介绍（请详细阅读）
 
 ## It looks like:
 

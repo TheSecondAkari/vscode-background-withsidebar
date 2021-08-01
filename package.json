@@ -1,9 +1,9 @@
 {
-  "name": "background",
-  "displayName": "background",
-  "description": "A simple tool to make your vscode's background look better!",
-  "version": "1.1.28",
-  "publisher": "shalldie",
+  "name": "custombackground",
+  "displayName": "custombackground",
+  "description": "A simple tool to make your vscode's background look better!dependence at background(version: 1.1.28)",
+  "version": "1.1.30",
+  "publisher": "TheSecondAkari",
   "author": "shalldie",
   "license": "MIT",
   "repository": {
@@ -66,6 +66,15 @@
           ],
           "description": "Each style of backgrounds. 每一个背景图的独有样式。"
         },
+        "background.siderbarStyles": {
+          "type": "array",
+          "default": [
+            {},
+            {},
+            {}
+          ],
+          "description": "Each style of sidebar backgrounds. 每一个背景图的独有样式。"
+        },
         "background.useDefault": {
           "type": "boolean",
           "default": true,
@@ -75,6 +84,16 @@
           "type": "array",
           "default": [],
           "description": "Your custom images. 自己定制背景图"
+        },
+        "background.sidebarImages": {
+          "type": "array",
+          "default": [],
+          "description": "侧边栏定制背景图，不为空才会生效"
+        },
+        "background.sidebarItems": {
+          "type": "array",
+          "default": [],
+          "description": "侧边栏启用定制背景图的tags，为空则只对 explorer生效，则侧边栏第一项生效,可选值[ workbench.view.(explorer, search, scm, debug, extensions) ]"
         },
         "background.loop": {
           "type": "boolean",

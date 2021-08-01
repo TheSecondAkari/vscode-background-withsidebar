@@ -5,7 +5,7 @@ import vscode from 'vscode';
 
 import vsHelp from './vsHelp';
 import vscodePath from './vscodePath';
-import getCss from './getCss';
+import getCss, { addSidebarImagesCss } from './getCss';
 import defBase64 from './defBase64';
 import { version, BACKGROUND_VER, ENCODE } from './constants';
 
@@ -202,7 +202,19 @@ class Background {
         }
 
         // 自定义的样式内容
-        const content = getCss(arr, config.style, config.styles, config.useFront, config.loop).replace(/\s*$/, ''); // 去除末尾空白
+        let content = getCss(arr, config.style, config.styles, config.useFront, config.loop).replace(/\s*$/, ''); // 去除末尾空白
+
+        // new 新添加侧边栏图片的配置, 根据配置生成侧边栏的css并且插入到 上面已生成的content中
+        if (config.sidebarImages && config.sidebarImages.length)
+            content = addSidebarImagesCss(
+                config.sidebarImages,
+                config.style,
+                config.sidebarStyles,
+                config.useFront,
+                config.loop,
+                content,
+                config.sidebarItems
+            );
 
         // 添加到原有样式(尝试删除旧样式)中
         let cssContent = this.getCssContent();
