@@ -2,7 +2,7 @@
   "name": "background-withsidebar",
   "displayName": "background-withsidebar",
   "description": "A simple tool to make your vscode's background look better!dependence at background(version: 1.1.28)",
-  "version": "1.1.30",
+  "version": "1.1.32",
   "publisher": "TheSecondAkari",
   "author": "shalldie",
   "license": "MIT",
@@ -48,12 +48,15 @@
             "content": "''",
             "pointer-events": "none",
             "position": "absolute",
+            "top": 0,
+            "left": 0,
             "z-index": "99999",
             "width": "100%",
             "height": "100%",
-            "background-position": "100% 100%",
+            "background-position": "center center",
             "background-repeat": "no-repeat",
-            "opacity": 1
+            "background-size": "cover",
+            "opacity": 0.3
           },
           "description": "Custom common style.自定义各项公有样式."
         },
@@ -75,10 +78,10 @@
           ],
           "description": "Each style of sidebar backgrounds. 每一个背景图的独有样式。"
         },
-        "background.useDefault": {
+        "background.useDefaultAsoul": {
           "type": "boolean",
           "default": true,
-          "description": "Use default images.使用默认图片"
+          "description": "使用默认Asoul图片,该属性为真时， customImages 和 sidebarImages都失效"
         },
         "background.customImages": {
           "type": "array",
@@ -92,8 +95,14 @@
         },
         "background.sidebarItems": {
           "type": "array",
-          "default": [],
-          "description": "侧边栏启用定制背景图的tags，为空则只对 explorer生效，则侧边栏第一项生效,可选值[ workbench.view.(explorer, search, scm, debug, extensions) ]"
+          "default": [
+            "workbench.view.explorer",
+            "workbench.view.search",
+            "workbench.view.scm",
+            "workbench.view.debug",
+            "workbench.view.extensions"
+          ],
+          "description": "侧边栏启用定制背景图的tags,可选值[ workbench.view.(explorer, search, scm, debug, extensions) ]，默认全生效，可单独配置"
         },
         "background.loop": {
           "type": "boolean",

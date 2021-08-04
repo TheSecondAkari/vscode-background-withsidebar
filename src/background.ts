@@ -6,8 +6,8 @@ import vscode from 'vscode';
 import vsHelp from './vsHelp';
 import vscodePath from './vscodePath';
 import getCss, { addSidebarImagesCss } from './getCss';
-import defBase64 from './defBase64';
 import { version, BACKGROUND_VER, ENCODE } from './constants';
+import { AsoulCodeView, AsoulSidebar } from './defBase64';
 
 /**
  * css文件修改状态类型
@@ -193,21 +193,22 @@ class Background {
             return;
         }
 
-        // 5.hack 样式
-        let arr = defBase64; // 默认图片
-
-        if (!config.useDefault) {
-            // 自定义图片
-            arr = config.customImages;
-        }
+        // 5.hack 样式 自定义图片
+        const arr = config.customImages;
 
         // 自定义的样式内容
-        let content = getCss(arr, config.style, config.styles, config.useFront, config.loop).replace(/\s*$/, ''); // 去除末尾空白
+        let content = getCss(
+            config.useDefaultAsoul ? AsoulCodeView : arr,
+            config.style,
+            config.styles,
+            config.useFront,
+            config.loop
+        ).replace(/\s*$/, ''); // 去除末尾空白
 
         // new 新添加侧边栏图片的配置, 根据配置生成侧边栏的css并且插入到 上面已生成的content中
-        if (config.sidebarImages && config.sidebarImages.length)
+        if (config.useDefaultAsoul || (config.sidebarImages && config.sidebarImages.length))
             content = addSidebarImagesCss(
-                config.sidebarImages,
+                config.useDefaultAsoul ? AsoulSidebar : config.sidebarImages,
                 config.style,
                 config.sidebarStyles,
                 config.useFront,

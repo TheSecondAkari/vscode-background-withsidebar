@@ -1,17 +1,24 @@
 # vscode-background
 
+# Info 重点：
+    添加一键开启 asoul 主题背景。  只需要在设置中将 background.useDefaultAsoul 勾选即可，刚安装插件默认打开
 # Warns 警告：
     该插件是在插件background的基础上增加少量代码完成，仅用作学习
     在不影响原功能的情况下，增加了侧边栏内容的背景图设置
     该插件是复用了 background 的所有代码，所以如果同时安装 本插件和background 会造成冲突，请留意！
+    新增 useDefaultAsoul 选项， 删除useDefault选项， 使用useDefaultAsoul即开启asoul主题背景
 
 ## Config 配置项（新增）
 
 | Name                      |      Type       | Description                                                                         |
 | :------------------------ | :-------------: | :---------------------------------------------------------------------------------- |
+| `background.useDefaultAsoul`| `boolean`     | 使用默认Asoul图片,该属性为真时， customImages 和 sidebarImages都失效    |
 | `background.sidebarImages` | `Array<String>` | 侧边栏定制背景图，不为空才会生效     |
-| `background.sidebarItems`  | `Array<String>` | 侧边栏启用定制背景图的tags，为空则只对 explorer生效，则侧边栏第一项生效,可选值[ workbench.view.(explorer, search, scm, debug, extensions) ] |
+| `background.sidebarItems`  | `Array<String>` | 侧边栏启用定制背景图的tags,可选值[ workbench.view.(explorer, search, scm, debug, extensions) ]，默认全生效，可单独配置 |
 | `background.siderbarStyles`| `Array<Object>` | 每个侧边栏图片的独立样式
+
+## 预览视频链接 
+    https://www.bilibili.com/video/BV1wM4y1K7SZ  视频里的插件版本低一点，现在新增一键开启asoul背景
 
 ## 依赖参考项目 background 
     author: shalldie
