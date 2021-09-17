@@ -2,6 +2,9 @@
 
 # Info 重点：
     添加一键开启 asoul 主题背景。  只需要在设置中将 background.useDefaultAsoul 勾选即可，刚安装插件默认打开
+## It looks like:
+![](https://s3.bmp.ovh/imgs/2021/09/da0ab02899bf245d.jpg)
+
 # Warns 警告：
     该插件是在插件background的基础上增加少量代码完成，仅用作学习
     在不影响原功能的情况下，增加了侧边栏内容的背景图设置
@@ -19,6 +22,13 @@
 
 ## 预览视频链接 
     https://www.bilibili.com/video/BV1wM4y1K7SZ  视频里的插件版本低一点，现在新增一键开启asoul背景
+### asoul图片来源 b站up（排名不分先后）
+    加一点点奶盖
+    兔毛不是毛
+    梁伸
+    木果阿木果
+    Fairy提子
+    king逍叶
 
 ## 依赖参考项目 background 
     author: shalldie
@@ -26,11 +36,6 @@
 
 #
 # 以下为 background 插件的介绍（请详细阅读）
-
-## It looks like:
-
-![](https://user-images.githubusercontent.com/9987486/40583705-7105dda8-61c6-11e8-935a-3c5d475a1eb1.gif)
-
 ## Warns 警告：
 
 > **本插件是通过修改 vscode 的 css 文件的方式运行**
