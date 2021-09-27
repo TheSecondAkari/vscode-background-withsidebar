@@ -1,14 +1,14 @@
 {
   "name": "background-withsidebar",
-  "displayName": "background-withsidebar",
-  "description": "A simple tool to make your vscode's background look better!dependence at background(version: 1.1.28)",
-  "version": "1.1.33",
+  "displayName": "A-SOUL-background",
+  "description": "Asoul默认vscode主题背景，可自定义图片。使用请认真阅读插件说明!dependence at background(version: 1.1.28)",
+  "version": "1.1.34",
   "publisher": "TheSecondAkari",
   "author": "shalldie",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TheSecondAkari/vscode-background-widthsidebar"
+    "url": "https://github.com/TheSecondAkari/vscode-background-withsidebar"
   },
   "engines": {
     "vscode": "^1.40.0"

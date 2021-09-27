@@ -1,6 +1,7 @@
-# vscode-background
+# A-SOUL-background
 
 # Info 重点：
+    插件更名为 A-SOUL-background
     添加一键开启 asoul 主题背景。  只需要在设置中将 background.useDefaultAsoul 勾选即可，刚安装插件默认打开
 ## It looks like:
 ![](https://s3.bmp.ovh/imgs/2021/09/da0ab02899bf245d.jpg)
