@@ -10,7 +10,8 @@
     该插件是在插件background的基础上增加少量代码完成，仅用作学习
     在不影响原功能的情况下，增加了侧边栏内容的背景图设置
     该插件是复用了 background 的所有代码，所以如果同时安装 本插件和background 会造成冲突，请留意！
-    新增 useDefaultAsoul 选项， 删除useDefault选项， 使用useDefaultAsoul即开启asoul主题背景
+    新增 useDefaultAsoul 配置选项， 删除useDefault配置选项， 使用useDefaultAsoul即开启asoul主题背景
+    删除 useFont 配置选项，适配插件 A-Soul-live2d
 
 ## Config 配置项（新增）
 

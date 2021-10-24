@@ -13,7 +13,7 @@ import { version, BACKGROUND_VER } from './constants';
 function getStyleByOptions(options: object, useFront: boolean): string {
     const styleArr: string[] = [];
     for (const k in options) {
-        // 在使用背景图时，排除掉 pointer-events
+        // 如果useFront = false, 背景图前置，可排除掉 pointer-events
         if (!useFront && ~['pointer-events', 'z-index'].indexOf(k)) {
             continue;
         }
@@ -127,7 +127,7 @@ export const addSidebarImagesCss = function (
     images: string[],
     style: any = {},
     styles: Array<any> = [],
-    useFront = false,
+    useFront = true,
     loop = false,
     content: string,
     sidebarItems: string[]

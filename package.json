@@ -2,7 +2,7 @@
   "name": "background-withsidebar",
   "displayName": "A-SOUL-background",
   "description": "Asoul默认vscode主题背景，可自定义图片。使用请认真阅读插件说明!dependence at background(version: 1.1.28)",
-  "version": "1.1.34",
+  "version": "1.1.35",
   "publisher": "TheSecondAkari",
   "author": "shalldie",
   "license": "MIT",
@@ -36,11 +36,6 @@
           "type": "boolean",
           "default": true,
           "description": "Plugin background enabled.background 插件是否启用"
-        },
-        "background.useFront": {
-          "type": "boolean",
-          "default": true,
-          "description": "If use front image,which means image is placed on the top of your code. 是否使用前景图，这样会使图片放在代码的顶部"
         },
         "background.style": {
           "type": "object",
@@ -86,7 +81,7 @@
         "background.customImages": {
           "type": "array",
           "default": [],
-          "description": "Your custom images. 自己定制背景图"
+          "description": "写代码的区域定制背景图"
         },
         "background.sidebarImages": {
           "type": "array",
