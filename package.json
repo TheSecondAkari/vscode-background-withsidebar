@@ -2,7 +2,7 @@
   "name": "background-withsidebar",
   "displayName": "A-SOUL-background",
   "description": "Asoul默认vscode主题背景，可自定义图片。使用请认真阅读插件说明!dependence at background(version: 1.1.28)",
-  "version": "1.1.35",
+  "version": "1.2.0",
   "publisher": "TheSecondAkari",
   "author": "shalldie",
   "license": "MIT",
@@ -40,20 +40,21 @@
         "background.style": {
           "type": "object",
           "default": {
-            "content": "''",
-            "pointer-events": "none",
-            "position": "absolute",
-            "top": 0,
-            "left": 0,
-            "z-index": "99999",
-            "width": "100%",
-            "height": "100%",
-            "background-position": "center center",
-            "background-repeat": "no-repeat",
             "background-size": "cover",
             "opacity": 0.2
           },
-          "description": "Custom common style.自定义各项公有样式."
+          "properties": {
+            "background-size": {
+              "type": "string",
+              "default": "cover"
+            },
+            "opacity": {
+              "type": "number",
+              "default": 0.2
+            }
+          },
+          "additionalProperties": false,
+          "description": "背景图公共样式部分定义, background-size背景图适配样式：cover(填充), contain(适应)，opacity不透明度：[0-1]，0是完全透明"
         },
         "background.styles": {
           "type": "array",
@@ -81,12 +82,18 @@
         "background.customImages": {
           "type": "array",
           "default": [],
-          "description": "写代码的区域定制背景图"
+          "items": {
+            "type": "string"
+          },
+          "description": "编码区背景图设置，两种字符串方式：本地绝对路径图片文件[不同电脑系统的路径方式可能不同]；https://开头的网络图片资源。 注意要先关闭默认asoul主题，该配置才能生效"
         },
         "background.sidebarImages": {
           "type": "array",
           "default": [],
-          "description": "侧边栏定制背景图，不为空才会生效"
+          "items": {
+            "type": "string"
+          },
+          "description": "侧边栏背景图设置，两种字符串方式：本地绝对路径图片文件[不同电脑系统的路径方式可能不同]；https://开头的网络图片资源。 注意要先关闭默认asoul主题，该配置才能生效"
         },
         "background.sidebarItems": {
           "type": "array",
@@ -97,7 +104,10 @@
             "workbench.view.debug",
             "workbench.view.extensions"
           ],
-          "description": "侧边栏启用定制背景图的tags,可选值[ workbench.view.(explorer, search, scm, debug, extensions) ]，默认全生效，可单独配置"
+          "items": {
+            "type": "string"
+          },
+          "description": "侧边栏启用定制背景图的tags,可选值[ workbench.view.(explorer, search, scm, debug, extensions) ]，默认全生效，可单独配置，增删"
         },
         "background.loop": {
           "type": "boolean",

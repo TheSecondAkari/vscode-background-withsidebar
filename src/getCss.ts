@@ -2,6 +2,33 @@ import fs from 'fs';
 import path from 'path';
 import { URL } from 'url';
 import { version, BACKGROUND_VER } from './constants';
+import vsHelp from './vsHelp';
+
+// 定死的共有样式配置
+const commonStyle = {
+    content: "''",
+    'pointer-events': 'none',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    'z-index': '99999',
+    width: '100%',
+    height: '100%',
+    'background-position': 'center center',
+    'background-repeat': 'no-repeat'
+};
+
+const formatImages = (images: string[]) => {
+    return images
+        .map(url => {
+            url.startsWith('http://') && vsHelp.showInfo(`不支持http的网络资源图片：${url}，请更换为https开头的`);
+            if (url.startsWith('https://') || url.startsWith('file://') || url.startsWith('data:image/')) return url;
+            return 'file:///' + url;
+        })
+        .map(url => {
+            return url.startsWith('file://') ? loadImageBase64FromFileProtocol(url) : url;
+        });
+};
 
 /**
  * 通过配置获取样式文本
@@ -57,7 +84,7 @@ export default function (
     loop = false
 ): string {
     // ------ 默认样式 ------
-    const defStyle = getStyleByOptions(style, useFront);
+    const defStyle = getStyleByOptions({ ...commonStyle, ...style }, useFront);
 
     // ------ 在前景图时使用 ::after ------
     const frontContent = useFront ? '::after' : '::before';
@@ -68,9 +95,7 @@ export default function (
       当检测到配置文件使用 file 协议时, 需要将图片读取并转为 base64, 而后再插入到 css 中
     */
 
-    const list = images.map(url => {
-        return url.startsWith('file://') ? loadImageBase64FromFileProtocol(url) : url;
-    });
+    const list = formatImages(images);
 
     // ------ 组合样式 ------
     const imageStyleContent = list
@@ -134,7 +159,7 @@ export const addSidebarImagesCss = function (
 ): string {
     // ------ 默认样式 ------
     // 默认都使用 useFront为false  ::before
-    const defStyle = getStyleByOptions(style, useFront);
+    const defStyle = getStyleByOptions({ ...commonStyle, ...style }, useFront);
 
     // ------ 在前景图时使用 ::after ------
     // const frontContent = useFront ? '::after' : '::before';
@@ -144,9 +169,7 @@ export const addSidebarImagesCss = function (
       在 v1.51.1 版本之后, vscode 将工作区放入 sandbox 中运行并添加了 file 协议的访问限制, 导致使用 file 协议的背景图片无法显示
       当检测到配置文件使用 file 协议时, 需要将图片读取并转为 base64, 而后再插入到 css 中
     */
-    const list = images.map(url => {
-        return url.startsWith('file://') ? loadImageBase64FromFileProtocol(url) : url;
-    });
+    const list = formatImages(images);
 
     // ------ 组合样式 ------
     const imageStyleContent = list

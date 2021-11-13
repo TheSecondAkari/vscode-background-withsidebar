@@ -18,7 +18,7 @@
 | Name                      |      Type       | Description                                                                         |
 | :------------------------ | :-------------: | :---------------------------------------------------------------------------------- |
 | `background.useDefaultAsoul`| `boolean`     | 使用默认Asoul图片,该属性为真时， customImages 和 sidebarImages都失效    |
-| `background.sidebarImages` | `Array<String>` | 侧边栏定制背景图，不为空才会生效     |
+| `background.sidebarImages` | `Array<String>` | 侧边栏定制背景图     |
 | `background.sidebarItems`  | `Array<String>` | 侧边栏启用定制背景图的tags,可选值[ workbench.view.(explorer, search, scm, debug, extensions) ]，默认全生效，可单独配置 |
 | `background.siderbarStyles`| `Array<Object>` | 每个侧边栏图片的独立样式
 
