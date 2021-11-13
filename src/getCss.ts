@@ -37,7 +37,8 @@ const formatImages = (images: string[]) => {
  * @param {boolean} useFront 是否前景图
  * @returns {string}
  */
-function getStyleByOptions(options: object, useFront: boolean): string {
+function getStyleByOptions(options: any, useFront: boolean): string {
+    if (options.opacity !== undefined) options.opacity = Number(options.opacity); // 将不透明度 从 string => number
     const styleArr: string[] = [];
     for (const k in options) {
         // 如果useFront = false, 背景图前置，可排除掉 pointer-events

@@ -2,7 +2,7 @@
   "name": "background-withsidebar",
   "displayName": "A-SOUL-background",
   "description": "Asoul默认vscode主题背景，可自定义图片。使用请认真阅读插件说明!dependence at background(version: 1.1.28)",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "TheSecondAkari",
   "author": "shalldie",
   "license": "MIT",
@@ -30,7 +30,7 @@
     ],
     "configuration": {
       "type": "object",
-      "title": "Plugin background config. background 插件配置",
+      "title": "背景图插件asoul-background",
       "properties": {
         "background.enabled": {
           "type": "boolean",
@@ -41,7 +41,7 @@
           "type": "object",
           "default": {
             "background-size": "cover",
-            "opacity": 0.2
+            "opacity": "0.2"
           },
           "properties": {
             "background-size": {
@@ -49,8 +49,8 @@
               "default": "cover"
             },
             "opacity": {
-              "type": "number",
-              "default": 0.2
+              "type": "string",
+              "default": "0.2"
             }
           },
           "additionalProperties": false,
