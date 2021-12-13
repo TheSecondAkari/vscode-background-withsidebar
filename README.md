@@ -3,27 +3,38 @@
 # Info 重点：
     插件更名为 A-SOUL-background
     添加一键开启 asoul 主题背景。  只需要在设置中将 background.useDefaultAsoul 勾选即可，刚安装插件默认打开
-## It looks like:
+
+# uninstall 卸载 
+    请不要直接在插件列表中删除（该操作很可能会造成背景样式残留）
+    正确步骤：
+        1. 需要先到设置中,搜索"background.enabled",将插件开启按钮关掉(取消勾选)
+        2. 然后再到插件列表中删除
+![](https://s3.bmp.ovh/imgs/2021/12/ad7f0edf64e8aa54.png)
+
+# [预览视频链接](https://www.bilibili.com/video/BV1wM4y1K7SZ)
+    https://www.bilibili.com/video/BV1wM4y1K7SZ 使用教程在P2，手把手教你自定义图片
+
+# It looks like:
 ![](https://s3.bmp.ovh/imgs/2021/09/da0ab02899bf245d.jpg)
 
-# Warns 警告：
+# Warns 提示：
     该插件是在插件background的基础上增加少量代码完成，仅用作学习
     在不影响原功能的情况下，增加了侧边栏内容的背景图设置
     该插件是复用了 background 的所有代码，所以如果同时安装 本插件和background 会造成冲突，请留意！
     新增 useDefaultAsoul 配置选项， 删除useDefault配置选项， 使用useDefaultAsoul即开启asoul主题背景
     删除 useFont 配置选项，适配插件 A-Soul-live2d
 
+
 ## Config 配置项（新增）
 
-| Name                      |      Type       | Description                                                                         |
-| :------------------------ | :-------------: | :---------------------------------------------------------------------------------- |
-| `background.useDefaultAsoul`| `boolean`     | 使用默认Asoul图片,该属性为真时， customImages 和 sidebarImages都失效    |
-| `background.sidebarImages` | `Array<String>` | 侧边栏定制背景图     |
-| `background.sidebarItems`  | `Array<String>` | 侧边栏启用定制背景图的tags,可选值[ workbench.view.(explorer, search, scm, debug, extensions) ]，默认全生效，可单独配置 |
-| `background.siderbarStyles`| `Array<Object>` | 每个侧边栏图片的独立样式
+| Name                         |      Type       | Description                                                                                                            |
+| :--------------------------- | :-------------: | :--------------------------------------------------------------------------------------------------------------------- |
+| `background.useDefaultAsoul` |    `boolean`    | 使用默认Asoul图片,该属性为真时， customImages 和 sidebarImages都失效                                                   |
+| `background.sidebarImages`   | `Array<String>` | 侧边栏定制背景图                                                                                                       |
+| `background.sidebarItems`    | `Array<String>` | 侧边栏启用定制背景图的tags,可选值[ workbench.view.(explorer, search, scm, debug, extensions) ]，默认全生效，可单独配置 |
+| `background.siderbarStyles`  | `Array<Object>` | 每个侧边栏图片的独立样式                                                                                               |
 
-## 预览视频链接 
-    https://www.bilibili.com/video/BV1wM4y1K7SZ  视频里的插件版本低一点，现在新增一键开启asoul背景
+
 ### asoul图片来源 b站up（排名不分先后）
     加一点点奶盖
     兔毛不是毛
@@ -35,8 +46,6 @@
 ## 依赖参考项目 background 
     author: shalldie
     GitHub: https://github.com/shalldie/vscode-background
-
-#
 # 以下为 background 插件的介绍（请详细阅读）
 ## Warns 警告：
 
