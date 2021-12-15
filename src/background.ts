@@ -6,8 +6,7 @@ import vscode from 'vscode';
 import vsHelp from './vsHelp';
 import vscodePath from './vscodePath';
 import getCss, { addSidebarImagesCss } from './getCss';
-import { version, BACKGROUND_VER, ENCODE } from './constants';
-import { AsoulCodeView, AsoulSidebar } from './defBase64';
+import { version, BACKGROUND_VER, ENCODE, AsoulCodeView, AsoulSidebar } from './constants';
 
 /**
  * css文件修改状态类型
