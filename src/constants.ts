@@ -1,5 +1,5 @@
 /** 版本号 */
-export const version = '1.2.4';
+export const version = '1.2.3';
 
 /** 版本标识 */
 export const BACKGROUND_VER = 'background.ver';
@@ -9,7 +9,7 @@ export const ENCODE = 'utf-8';
 
 /** 默认Asoul图片 url */
 export const AsoulCodeView = [
-    'https://s3.bmp.ovh/imgs/2022/01/b653f28291418c1e.jpg',
+    'https://s3.bmp.ovh/imgs/2021/08/c49f292e64ec0747.jpg',
     'https://i0.hdslb.com/bfs/album/d5c71a76cd5d177868258f852afd6a6321193152.jpg',
     'https://i0.hdslb.com/bfs/album/280ceac266ec680f0c6196b58472563cad616bbb.jpg'
 ];
